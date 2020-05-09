@@ -54,36 +54,6 @@ def listQueue(pasien, data_pasien):
         print(
             "Pasien {0} Terdapat Kesalahan Penginputan Kategori".format(pasien))
 
-# def use_fasilitas(antrian,data_pasien,fasilitas):
-#     # Loop antrian
-#     while q.size(antrian) > 0:
-#         # Make antrian reverse 1 by 1
-#         for i in range(0,1):
-#             # print antrian
-#             print("Antrian: {0}".format(antrian))
-#             # check if fasilitas in data_pasien equivalent with fasilitas in const_fasilitas
-#             if data_pasien[antrian[i]]["fasilitas"] == const_fasilitas["fasilitas"].get(fasilitas):
-#                 # check if waktu pasien more than 0
-#                 if data_pasien[antrian[i]]["waktu"] > 0:
-#                     # decrease waktu pasien
-#                     waktu_temp = data_pasien[antrian[i]]["waktu"] - const_fasilitas["waktu"].get(fasilitas)
-#                     # update waktu pasien in data_pasien
-#                     data_pasien[antrian[i]].update({"waktu":waktu_temp})
-#                     # after decrease, check data_pasien if waktu pasien more than 1
-#                     if data_pasien[antrian[i]]['waktu'] > 1:
-#                         print("Pasien {0} Masih Membutuhkan Waktu {1}".format(antrian[i], waktu_temp))
-#                         # reverse antrian
-#                         q.enqueue(antrian, q.dequeue(antrian))
-#                     else:
-#                         # decrease antrian
-#                         q.dequeue(antrian)
-#                 # if antrian not null
-#                 elif not q.isEmpty(antrian):
-#                     # decrease antrian
-#                     q.dequeue(antrian)
-#                     print("Antrian: {0}".format(antrian))
-
-# Another Logic
 def use_fasilitas(antrian, data_pasien, fasilitas):
     # Show First
     print("Antrian: {0}".format(antrian))

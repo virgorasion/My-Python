@@ -6,9 +6,9 @@ avg = (TA+TK+TP)/3
 print(float(avg))
 
 if avg > 75:
-	if TA > TK and TA > TP:
+	if TP < TA > TK:
 		print("Bagian Administrasi")
-	elif TK > TA and TK > TP:
+	elif TA < TK > TP:
 		print("Bagian Produksi")
 	else:
 		print("Bagian Pemasaran")

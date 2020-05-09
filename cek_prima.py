@@ -1,3 +1,4 @@
+import Module.Stack as st
 inpt = int(input("Masukkan Angka: "))
 iterasi = 2
 prima = st.stack()

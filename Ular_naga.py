@@ -9,11 +9,11 @@ def ularNaga(nama, hitungan):
     while q.size(gameQueue) > 1:
         for i in range(hitungan):
             q.enqueue(gameQueue, q.dequeue(gameQueue))
-            print('hitungan ke-', i, '=', gameQueue)
+            print('hitungan ke-', i+1, '=', gameQueue)
         q.dequeue(gameQueue)
         print('Peserta Permainan=', gameQueue)
     return gameQueue
 
 
-ularNaga(['andi', 'rita', 'sari', 'anton', 'rafa', 'diana', 'zaki'], 2)
+ularNaga(['fatin', 'ajeng', 'sindy', 'shafa', 'indah', 'mala'], 2)
 
