@@ -2,25 +2,25 @@ data = [10,3,9,1,2]
 
 
 # Modified 
-sort = "max"
+# sort = "max"
 for luar in range(len(data)-1,0,-1):
     flag = luar
     for dalam in range(luar-1,-1,-1):
         if data[flag] < data[dalam]:
             flag = dalam
     data[luar],data[flag] = data[flag],data[luar]
-    print(data)
+    print("Max =",data)
 
-sort = "min"
+# sort = "min"
 for luar in range(len(data)-1,0,-1):
     flag = luar
     for dalam in range(luar-1,-1,-1):
         if data[flag] > data[dalam]:
             flag = dalam
     data[luar],data[flag] = data[flag],data[luar]
-    print(data)
+    print("Min =",data)
 
-sort = "minmax"
+# sort = "minmax"
 for i,luar in enumerate(range(len(data)-1,0,-1)):
     bigFlag = luar
     lowFlag = len(data)-luar-1
