@@ -1,30 +1,24 @@
 data = [10,3,9,1,2]
-# for luar in range(len(data)-1):
-#     flag = luar
-#     for dalam in range(luar+1,len(data)):
-#         if data[flag] > data[dalam]:
-#             flag = dalam
-#     data[luar],data[flag] = data[flag],data[luar]
-#     print(data)
+
 
 # Modified 
-# sort = "max"
-# for luar in range(len(data)-1,0,-1):
-#     flag = luar
-#     for dalam in range(luar-1,-1,-1):
-#         if data[flag] < data[dalam]:
-#             flag = dalam
-#     data[luar],data[flag] = data[flag],data[luar]
-#     print(data)
+sort = "max"
+for luar in range(len(data)-1,0,-1):
+    flag = luar
+    for dalam in range(luar-1,-1,-1):
+        if data[flag] < data[dalam]:
+            flag = dalam
+    data[luar],data[flag] = data[flag],data[luar]
+    print(data)
 
-# sort = "min"
-# for luar in range(len(data)-1,0,-1):
-#     flag = luar
-#     for dalam in range(luar-1,-1,-1):
-#         if data[flag] > data[dalam]:
-#             flag = dalam
-#     data[luar],data[flag] = data[flag],data[luar]
-#     print(data)
+sort = "min"
+for luar in range(len(data)-1,0,-1):
+    flag = luar
+    for dalam in range(luar-1,-1,-1):
+        if data[flag] > data[dalam]:
+            flag = dalam
+    data[luar],data[flag] = data[flag],data[luar]
+    print(data)
 
 sort = "minmax"
 for i,luar in enumerate(range(len(data)-1,0,-1)):
