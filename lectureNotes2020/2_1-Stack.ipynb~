@@ -1,0 +1,686 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "# <font color=blue>Stacks</font>\n",
+    "\n",
+    "\n",
+    "Strutktur Data\n",
+    "***"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Struktur Data \n",
+    "\n",
+    "Struktur data merupakan cara programmer untuk merepresentasikan suatu data, dan memudahkan programmer untuk menyelesaikan permasalahan dengan menggunakan struktur data tersebut.\n",
+    "\n",
+    "Struktur data **Linear Structure** merupakan struktur data sederhana dimana ketika data ditambahkan maka data tersebut berada pada posisi relatif terhadap data yang lain dari struktur data tersebut.\n",
+    "Linear structure ini memiliki dua buah ujung.  Dua buah ujung ini memiliki beberapa istilah seperti **left-right**, **front-rear**, ataupun **top-bottom**.\n",
+    "Terdapat beberapa struktur data yang termasuk pada linear structure ini, yaitu :\n",
+    "    - Stacks\n",
+    "    - Queues\n",
+    "    - Lists\n",
+    "\n",
+    "Ketiga jenis struktur data tersebut berbeda dalam penambahan atau penghapusan suatu data.  Misalkan, suatu struktur data hanya diperbolehkan menghapus data pada salah satu ujung, sedangkan pada struktur data lain, penghapusan data dapat dilakukan pada kedua ujung. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Struktur data yang akan dibahas pertama kali adalah *Stacks*, yang terdiri dari :\n",
+    "1. [Stacks](#Definisi-Stacks)\n",
+    "2. [Operasi Stacks](#Operasi-pada-Stacks)\n",
+    "3. [Contoh Implementasi Stacks](#Implementasi-Stacks)\n",
+    "4. [Ekspressi Aritmatik Infix, Prefix, Postfix](#Ekspressi-Aritmatik-Infix,-Prefix,-Postfix)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "## Definisi Stacks\n",
+    "\n",
+    "\n",
+    "**Stacks** adalah satu struktur data dimana penambahan dan penghapusan data, hanya dapat dilakukan pada satu ujung yang **sama**, atau yang biasa dikenal dengan istilah **top**.\n",
+    "\n",
+    "Semakin data jauh berada dari posisi top, maka data tersebut diindikasikan berada di stack lebih lama dibandingkan dengan data yang berada dekat pada data di posisi top.\n",
+    "\n",
+    "Jika terdapat data baru yang ditambahkan di stack, maka data ini pulalah yang akan dihapus ketika terdapat proses penghapusan data.  Konsep ini dikenal dengan nama **LIFO-Last In First Out**.\n",
+    "\n",
+    "Konsep stack ini dapat ditemui pada permasalahan sehari-hari, misalkan tumpukan buku pada Gambar 1 berikut.<br> \n",
+    "\n",
+    "![title](images/bookStack1.png) <br>\n",
+    "**Gambar 1. Tumpukan buku**\n",
+    "\n",
+    "Jika kita ingin mengambil buku pada tumpukan buku tersebut, maka buku yang dapat kita ambil adalah buku yang berada di posisi teratas.  Jika ingin mengambil buku yang berada di posisi paling bawah, maka kita harus mengambil buku-buku yang berada di posisi atasnya terlebih dahulu.\n",
+    "Begitu juga ketika terdapat penambahan buku baru, maka buku baru ini akan berada di posisi paling atas."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "[**Kembali ke Menu Awal**](#Stacks)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "## Operasi pada Stacks\n",
+    "\n",
+    "\n",
+    "Terdapat operasi dasar pada Stacks, \n",
+    "    - stack (),   inisialisasi stack yang kosong\n",
+    "    - push(data), penambahan data baru pada posisi top dari stack\n",
+    "    - pop(),      penghapusan data yang terdapat di posisi top dari stack. Return value dari fungsi ini adalah data yang  \n",
+    "                  dihapus dari stack tersebut\n",
+    "    - peek(),     informasi data yang terletak pada posisi top\n",
+    "    - isEmpty(), untuk memeriksa apakah stack dalam keadaan kosong\n",
+    "    - size(),     informasi jumlah data yang terdapat pada stack"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Ilustrasi proses penambahan data atau yang dikenal dengan istilah **push** dapat dilihat pada Gambar 2 berikut. <br>\n",
+    "![title](images/pushStack1.png)<br>\n",
+    "**Gambar 2. Operasi push pada Stacks**<br>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Sedangkan proses penghapusan data atau yang dikenal dengan istilah **pop** dapat dilihat pada Gambar 3 berikut.<br>\n",
+    "![title](images/popStack2.png)<br>\n",
+    "**Gambar 3. Operasi pop pada Stacks**<br>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "## Code\n",
+    "\n",
+    "Berikut adalah fungsi-fungsi yang dibutuhkan untuk mengimplementasikan stacks."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+   ],
+   "source": [
+    "def stack():\n",
+    "    s=[]\n",
+    "    return (s)\n",
+    "def push(s,data):\n",
+    "    s.append(data)\n",
+    "def pop(s):\n",
+    "    data=s.pop()\n",
+    "    return(data)\n",
+    "def peek(s):\n",
+    "    return(s[len(s)-1])\n",
+    "def isEmpty(s):\n",
+    "    return (s==[])\n",
+    "def size(s):\n",
+    "    return(len(s))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Struktur data direpresentasikan dengan lists.  Posisi top dari suatu stacks berada pada posisi terakhir pada list, oleh karena itu, operasi *push* pada stack, menggunakan method *append* dari list, sehingga dengan operasi *append* ini, penambahan data baru terletak pada posisi akhir pada list. <br>.  Misalkan terdapat variabel ```dataStack``` yang menggunakan stacks berisikan data ```dataStack=[4,8,1,0]```, maka posisi top berada pada data ```0```.  Sehingga ketika dilakukan ```push(dataStack,72)```, maka ```dataStack``` akan berubah menjadi ```dataStack=[4,8,1,72]```. <br>\n",
+    "Sedangkan operasi *pop* pada list, menggunakan method *pop* dari list, karena method *pop* ini menghapus data yang terletak pada posisi akhir dari list."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Berikut adalah contoh penggunaan fungsi-fungsi stacks yang telah dibuat"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false,
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {
+     },
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "st=stack()\n",
+    "isEmpty(st)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[100, 23]\n"
+     ]
+    }
+   ],
+   "source": [
+    "push(st,100)\n",
+    "push(st,23)\n",
+    "push(st,34)\n",
+    "pop(st)\n",
+    "push(st,56)\n",
+    "pop(st)\n",
+    "print(st)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Latihan - 1\n",
+    "\n",
+    "Buat function untuk 'reverse word' dengan menggunakan konsep **stacks**, misalkan kata 'stacks' menjadi 'skcats'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "[**Kembali ke Menu Awal**](#Stacks)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "## Implementasi Stacks\n",
+    "\n",
+    "Berikut adalah contoh implementasi untuk penggunaan stacks, yaitu *delimiter matching* dan konversi desimal ke biner\n",
+    "\n",
+    "### Delimiter Matching\n",
+    "\n",
+    "**Parentheses** sering digunakan untuk urutan penyelesaian dalam persamaan Matematika, seperti contoh berikut:\n",
+    "\n",
+    "P = 5 x (4 + 5) / ((3 + 2) x (10 - 8))\n",
+    "\n",
+    "Dengan penggunaan **parentheses** maka persamaan tersebut dapat diselesaikan secara benar, hanya saja terkadang **parentheses** yang ditulis tidak lengkap, sehingga hasil persamaan tidak dapat dikerjakan atau tidak sesuai dengan yang diinginkan, seperti contoh berikut :\n",
+    "\n",
+    "P = 5 x (4 + 5) / ((3 + 2) x (10 - 8)\n",
+    "\n",
+    "Oleh karena itu diperlukan algoritma untuk pemeriksaan parentheses ini atau secara umum **delimiter**, yaitu '{ }', '[ ]', dan '( )'. <br>\n",
+    "\n",
+    "Beberapa tahapan atau algoritma untuk pengecekan *parentheses* ini adalah :\n",
+    "1. Baca setiap karakter yang terdapat pada suatu string matematika\n",
+    "2. Jika karakter adalah kurung buka, maka masukkan dalam stack\n",
+    "3. Jika karakter adalah kurung tutup, ada beberapa kondisi yang harus diperiksa, yaitu :\n",
+    "    - Jika stack dalam keadaan empty, maka jumlah kurung tutup lebih banyak daripada kurung buku\n",
+    "    - Jika stack dalam keadaan tidak empty, maka maka pop stack, dan cocokkan karakter hasil pop dengan kurung tutup, jika sejenis, maka *matched*, jika tidak maka jenis kurung tidak sama\n",
+    "4. Jika semua karakter telah terbaca, dan stack masih dalam keadaan terisi (tidak *empty*), maka jumlah kurung buka lebih banyak daripada kurung tutup\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Code\n",
+    "\n",
+    "Berikut adalah fungsi untuk pengecekan kurung pada suatu string matematika\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [
+   ],
+   "source": [
+    "def stack():\n",
+    "    s=[]\n",
+    "    return (s)\n",
+    "def push(s,data):\n",
+    "    s.append(data)\n",
+    "def pop(s):\n",
+    "    data=s.pop()\n",
+    "    return(data)\n",
+    "def peek(s):\n",
+    "    return(s[len(s)-1])\n",
+    "def isEmpty(s):\n",
+    "    return (s==[])\n",
+    "def size(s):\n",
+    "    return(len(s))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [
+   ],
+   "source": [
+    "def paranthesesCheck(strMath):\n",
+    "    operandStack=stack()\n",
+    "    lenMath=len(strMath)\n",
+    "    openOperand='({['\n",
+    "    closeOperand=')}]'\n",
+    "    #print(lenMath)\n",
+    "    i=0\n",
+    "    Matched=True;\n",
+    "    while i<(lenMath):\n",
+    "        #print(i,'=',strMath[i])\n",
+    "        if strMath[i] in openOperand:\n",
+    "            push(operandStack,strMath[i])\n",
+    "            #print(operandStack)\n",
+    "        elif strMath[i] in closeOperand:\n",
+    "            if not (isEmpty(operandStack)):\n",
+    "                top=pop(operandStack)\n",
+    "                #print(\"top=\",top)\n",
+    "                #print (operandStack)\n",
+    "                if openOperand.index(top)==closeOperand.index(strMath[i]):\n",
+    "                    Matched=Matched and True\n",
+    "                else:\n",
+    "                    Matched=Matched and False\n",
+    "                    print ('Kurung Buka dan Kurang Tutup tidak Cocok')\n",
+    "            else:\n",
+    "                Matched=Matched and False\n",
+    "                print('Jumlah Kurung Tutup lebih banyak')\n",
+    "        i=i+1\n",
+    "        #print(Matched)\n",
+    "    if not(isEmpty(operandStack)):\n",
+    "        Matched=False\n",
+    "        print('Jumlah Kurung Buka Lebih banyak')\n",
+    "    return(Matched)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [
+   ],
+   "source": [
+    "a='5 x (4 + 5) / ((3 + 2) x (10 - 8)'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Jumlah Kurung Buka Lebih banyak\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "isMatched=paranthesesCheck(b)\n",
+    "print(isMatched)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {
+     },
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "paranthesesCheck('5 x (4 + 5) / ((3 + 2) x (10 - 8))')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Kurung Buka dan Kurang Tutup tidak Cocok\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 28,
+     "metadata": {
+     },
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "paranthesesCheck('5 x (4 + 5} / ((3 + 2) x (10 - 8))')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Konversi Bilangan \n",
+    "\n",
+    "Pada dunia ilmu komputer seringkali dibutuhkan proses konversi dari suatu bilangan ke bilangan lain, misalkan dari bilangan desimal menjadi bilangan biner atau menjadi bilangan octal.\n",
+    "Ilustrasi proses konversi dari bilangan desimal ke bilangan biner dapat dilihat pada Gambar 4 berikut. <br>\n",
+    "![title](images/desToBin2.png)<br>\n",
+    "**Gambar 4. Konversi bilangan desimal ke biner**<br>\n",
+    "\n",
+    "Dari Gambar tersebut dapat dilihat bahwa bilangan biner didapatkan dari **sisa** pembagian bilangan desimal dengan **dua**.  Hasil konversi didapatkan dengan cara membaca terbalik semua sisa tersebut.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Latihan - 2\n",
+    "\n",
+    "Buat function untuk mengkonversi bilangan desimal menjadi bilangan biner dengan menggunakan konsep **stack**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "[**Kembali ke Menu Awal**](#Stacks)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "## Ekspressi Aritmatik Infix, Prefix, Postfix\n",
+    "\n",
+    "Eksperssi aritmatik yang sering ditemui adalah operasi aritmatik **infix**.  Pada operasi aritmatik **infix** ini, **operator** (+,-,\\*,/, dll) berada diantara dua buah **operand** (bilangan).  Ekspressi aritmatik ini dapat dengan mudah diselesaikan ketika tidak ada ambiguitas, seperti:\n",
+    "\\begin{align}\n",
+    "A + B \\\\\n",
+    "A * X \\\\\n",
+    "A - B + C\n",
+    "\\end{align}\n",
+    "\n",
+    "Akan tetapi, ekspressi aritmatik ini akan sulit diselesaikan jika terjadi ambiguitas, seperti ekspressi aritmatik berikut ini:\n",
+    "\\begin{align}\n",
+    "A + B * C\n",
+    "\\end{align}\n",
+    "\n",
+    "Pada ekspressi tersebut, terdapat ambiguitas, yaitu apakah A + B diselesaikan terlebih dahulu ataukah B \\* C yang harus diselesaikan terlebih dahulu.  Ambiguitas ini dapat diatasi dengan konsep **operator precedence**.  Pada operator precedence, operator-operator dibagi menjadi beberapa level berdasarkan prioritas urutan penyelesaian.  \n",
+    "Pada contoh ekspressi aritmatik A + B \\* C, berdasarkan operator precedence, maka urutan penyelesaian adalah B \\* C kemudian hasilnya ditambahkan dengan A.\n",
+    "Permasalahan terjadi ketika pada ekspressi aritmatik A + B \\* C, A + B ingin diselesaikan terlebih dahulu.  Untuk penyelesaian ekspressi aritmatik yang tidak sesuai dengan urutan operator precedence, maka tanda '( )' sangatlah diperlukan, sehingga operasi tersebut menjadi (A + B) \\* C.\n",
+    "\n",
+    "Tanda '( )' **tidaklah diperlukan** pada ekspressi aritmatik **prefix** dan **postfix**.\n",
+    "Pada ekspressi aritmatik **prefix**, operator mendahului operand, sedangkankan ekspressi aritmatik **postfix**, operator ditulis setelah operand."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Berikut contoh ekspressi aritmatik **infix** dan konversinya ke **prefix** dan **postfix**.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "|    Infix   |  Prefix  |  Postfix |\n",
+    "|------------|----------|----------|          \n",
+    "|   A+B      |  +AB     |   AB+    |\n",
+    "| (A+B)*C    |  *+ABC   |   AB+C*  |\n",
+    "|(A+B)*(C-D) | *+AB-CD  | AB+CD-*  |\n",
+    "| A+B*C-D    | -+A*BCD  | ABC*+D-  |\n",
+    "| A+B-C+D    | +-+ABCD  | AB+C-D+  |\n",
+    "| A\\*B-C\\*D    | -\\*AB\\*CD  | AB\\*CD\\*-  |\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Konversi Infix ke Postfix\n",
+    "\n",
+    "Berikut algoritma untuk konversi ekspressi aritmatik *infix* ke *postfix* :\n",
+    "1. Buat struktur data *stack* untuk menampung operator\n",
+    "2. Baca ekspressi aritmatik dari kiri ke kanan tiap token :\n",
+    "    - jika token yang dibaca adalah *operand* maka masukkan *operand* tersebut ke dalam *output string*\n",
+    "    - jika token yang dibaca adalah kurung buka maka *push* kurung buka tersebut ke dalam *stack*\n",
+    "    - jika token yang dibaca adalah kurang tutup maka *pop* stack semua token sampai ditemukan kurung buka\n",
+    "    - jika token yang dibaca adalah *operator* maka :\n",
+    "        - pop operator-operator yang memiliki precedence lebih tinggi atau sama dan masukkan operator tersebut ke dalam *output string*\n",
+    "        - push token operator ke dalam stack\n",
+    "3. Jika masih terdapat operator pada stack, maka pop operator yang tersisa dan letakkan pada *output string*        \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "Contoh konversi dari infix ke postfix dapat dilihat pada Gambar 5.<br>\n",
+    "![title](images/infixToPostfix.png) <br>\n",
+    "**Gambar 5. Konversi bilangan desimal ke biner**<br>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "### Latihan - 3\n",
+    "\n",
+    "Buat function untuk mengkonversikan ekspressi aritmatik infix menjadi ekspressi aritmatik postfix\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "### Evaluasi Ekspressi Postfix\n",
+    "\n",
+    "Seperti yang sudah dijelaskan sebelumnya, evaluasi untuk ekspressi aritmatika Postfix dilakukan setelah terdapat dua buah operand sebelum sebuah operator.\n",
+    "Misalkan : \n",
+    "87+2\\*, yang berarti (8+7)\\*2=30,\n",
+    "oleh karena itu berikut algoritma untuk mengevaluasi ekspressi aritmatika postfix :\n",
+    "1. baca string mulai dari kiri\n",
+    "2. Jika character yang dibaca adalah sebuah operand, maka push operand tersebut.\n",
+    "3. Jika character yang dibaca adalah sebuah operator, maka pop dua buah operand yang terdapat pada stack, operasikan dua buah operand tersebut dengan operator, dan push hasil operasinya\n",
+    "4. hasil akhir adalah angka terakhir yang terdapat di dalam stack\n",
+    "\n",
+    "### Code\n",
+    "\n",
+    "Berikut code untuk evaluasi ekspressi postfix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [
+   ],
+   "source": [
+    "def evaluatePost(postStr):\n",
+    "    operandStack=stack()\n",
+    "    operator='+-/*'\n",
+    "    for i in postStr:\n",
+    "        if i not in operator:\n",
+    "            push(operandStack,i)\n",
+    "        else:\n",
+    "            oprnd2=pop(operandStack)\n",
+    "            oprnd1=pop(operandStack)\n",
+    "            if i=='+':\n",
+    "                result=float(oprnd1)+float(oprnd2)\n",
+    "            elif i=='-':\n",
+    "                result=float(oprnd1)-float(oprnd2)\n",
+    "            elif i=='*':\n",
+    "                result=float(oprnd1)*float(oprnd2)\n",
+    "            else:\n",
+    "                result=float(oprnd1)/float(oprnd2)\n",
+    "            push(operandStack,result)\n",
+    "    return(pop(operandStack))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-6.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(evaluatePost('45-6*'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": false
+   },
+   "source": [
+    "[**Kembali ke Menu Awal**](#Stacks)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (system-wide)",
+   "language": "python",
+   "metadata": {
+    "cocalc": {
+     "description": "Python 3 programming language",
+     "priority": 100,
+     "url": "https://www.python.org/"
+    }
+   },
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}

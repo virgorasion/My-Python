@@ -1,0 +1,4 @@
+{"backend_state":"running","kernel":"python3","kernel_state":"idle","kernel_usage":{"cpu":0,"memory":80965632},"trust":true,"type":"settings"}
+{"cell_type":"markdown","id":"22b5af","input":"Materi pertama tentang : pengenalan algoritma","pos":0,"type":"cell"}
+{"end":1582171225545,"exec_count":1,"id":"2fbed3","input":"print('hello world')","kernel":"python3","output":{"0":{"name":"stdout","text":"hello world\n"}},"pos":1,"scrolled":true,"start":1582171225539,"state":"done","type":"cell"}
+{"last_load":1582171023993,"type":"file"}
