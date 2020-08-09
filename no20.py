@@ -24,12 +24,12 @@ def insert(iterasi):
     for i in range(iterasi):
         input_nama = input("Nama Proses: ")
         # Create child dict
-        data = createQueue()
-        data.enqueue(data,input("Lama Waktu Yang Dibutuhkan = "))
-        data.enqueue(data,input("Resource Sharing [A-B-C] = "))
-        data.enqueue(data, 0)
+        temp = createQueue()
+        temp.append(input("Lama Waktu Yang Dibutuhkan = "))
+        temp.append(input("Resource Sharing [A-B-C] = "))
+        temp.append(0)
         # Add child dict into data
-        data[input_nama] = data
+        data[input_nama] = temp
     return data  # return (dict)
 
 print(insert(3))
